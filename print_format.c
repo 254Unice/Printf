@@ -23,7 +23,7 @@ int _print_format(const char *format, va_list args)
 				i++;
 
 			if (format[i] == '%')
-				count += _write(format[i]);
+				count += _putchar(format[i]);
 
 			if (_validate_char(format[i]) == 0)
 			{
@@ -36,7 +36,7 @@ int _print_format(const char *format, va_list args)
 		}
 		else
 		{
-			count += _write(format[i]);
+			count += _putchar(format[i]);
 		}
 
 		i++;
@@ -78,16 +78,16 @@ int _print_spec(char format, va_list args)
   */
 int _print_invalid_spec(char prev_format, char format, int count)
 {
-	count += _write('%');
+	count += _putchar('%');
 
 	if (prev_format == ' ')
 	{
-		count += _write(' ');
-		count += _write(format);
+		count += _putchar(' ');
+		count += _putchar(format);
 	}
 	else
 	{
-		count += _write(format);
+		count += _putchar(format);
 	}
 
 	return (count);
