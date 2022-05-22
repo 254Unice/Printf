@@ -1,13 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
-  *main -character printed 
-  *
-  *return : Always 0
-  */
-int main (void)
+ * _printf - function printf
+ *
+ * Return: number of chars that print
+ */
+int _printf(const char *format, ...)
 {
+	va_list args;
+	int length = 0;
+
 	if (format == NULL)
 		return (-1);
 
@@ -17,5 +21,3 @@ int main (void)
 	va_end(args);
 	return (length);
 }
-		
-
