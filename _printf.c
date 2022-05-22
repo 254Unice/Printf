@@ -8,8 +8,14 @@
   */
 int main (void)
 {
-	int len;
-	int len2;
-	unsigned int ui:
+	if (format == NULL)
+		return (-1);
+
+	va_start(args, format);
+
+	length = _print_format(format, args);
+	va_end(args);
+	return (length);
+}
 		
 
